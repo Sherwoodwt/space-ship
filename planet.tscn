@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://dkrwuai67ycu5"]
+
+[ext_resource type="Script" uid="uid://dabd6yyey44a8" path="res://planet.gd" id="1_1odxm"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_xkndl"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1odxm"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_jcv8b"]
+material = SubResource("StandardMaterial3D_1odxm")
+
+[node name="Planet" type="RigidBody3D" unique_id=1240571301]
+disable_mode = 1
+gravity_scale = 0.0
+script = ExtResource("1_1odxm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1021712231]
+shape = SubResource("SphereShape3D_xkndl")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1278204373]
+mesh = SubResource("SphereMesh_jcv8b")

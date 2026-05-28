@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dkf554pyhjj20"]
+
+[ext_resource type="Script" uid="uid://c4vu67ks2w1sj" path="res://ship.gd" id="1_l3rv8"]
+[ext_resource type="ArrayMesh" uid="uid://ugpkv4ioubry" path="res://models/Package/InterstellarRunner.obj" id="2_4cq66"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4cq66"]
+
+[node name="Ship" type="CharacterBody3D" unique_id=944005227]
+script = ExtResource("1_l3rv8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=548423482]
+transform = Transform3D(2.295, 0, 0, 0, -1.0031764e-07, 2.295, 0, -2.295, -1.0031764e-07, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_4cq66")
+
+[node name="Model" type="MeshInstance3D" parent="." unique_id=1125792518]
+transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 1.71, -0.8, -2.9908862)
+mesh = ExtResource("2_4cq66")
