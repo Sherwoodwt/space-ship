@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bp41sydl5hni7"]
+
+[ext_resource type="Script" uid="uid://c4n6mhoc2xf2d" path="res://star.gd" id="1_46ao5"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_1b021"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_1b021"]
+
+[node name="Star" type="RigidBody3D" unique_id=932366820]
+script = ExtResource("1_46ao5")
+young_color = Color(0.9137255, 0.11372549, 0, 1)
+old_color = Color(0.9529412, 1, 0.78039217, 1)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=373411539]
+shape = SubResource("SphereShape3D_1b021")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1595931615]
+mesh = SubResource("SphereMesh_1b021")

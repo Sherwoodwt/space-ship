@@ -4,12 +4,10 @@ extends RigidBody3D
 @export var color: Color
 @export var radius: float
 
-static func init(color: Color, radius: float) -> Planet:
-	var planet: Planet
-	planet.color = color
-	planet.radius = radius
-	return planet
+@onready var mesh = $MeshInstance3D
 
 func _ready():
-	$MeshInstance3D.get_active_material(0).albedo_color = color
+	var material = StandardMaterial3D.new()
+	material.albedo_color = color
+	mesh.set_surface_override_material(0, material)
 	scale = scale * radius

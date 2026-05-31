@@ -5,6 +5,14 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4cq66"]
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_4cq66"]
+top_radius = 0.4
+bottom_radius = 0.19
+height = 1.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4325"]
+albedo_color = Color(0.16078432, 1, 1, 1)
+
 [node name="Ship" type="CharacterBody3D" unique_id=944005227]
 script = ExtResource("1_l3rv8")
 
@@ -15,3 +23,132 @@ shape = SubResource("CapsuleShape3D_4cq66")
 [node name="Model" type="MeshInstance3D" parent="." unique_id=1125792518]
 transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 1.71, -0.8, -2.9908862)
 mesh = ExtResource("2_4cq66")
+
+[node name="Exhausts" type="Node3D" parent="." unique_id=783207977]
+
+[node name="Forward" type="Node3D" parent="Exhausts" unique_id=46592616]
+visible = false
+
+[node name="BackLeft" type="MeshInstance3D" parent="Exhausts/Forward" unique_id=386498704]
+transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, 0.4, 0, -0.4, -1.7484556e-08, -0.9763129, -0.14185911, 2.4507558)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="BackRight" type="MeshInstance3D" parent="Exhausts/Forward" unique_id=1630004995]
+transform = Transform3D(0.4, 0, 0, 0, -1.7484556e-08, 0.4, 0, -0.4, -1.7484556e-08, 0.976, -0.142, 2.450912)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="MoveLeft" type="Node3D" parent="Exhausts" unique_id=1733733641]
+visible = false
+
+[node name="FrontLeft" type="MeshInstance3D" parent="Exhausts/MoveLeft" unique_id=1776745774]
+transform = Transform3D(-1.3113417e-08, -0.3, -1.3113417e-08, 0, -1.3113417e-08, 0.3, -0.3, 1.3113417e-08, 5.7320567e-16, 0.53478855, 0.03624223, -2.4319654)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="MoveLeftBack" type="MeshInstance3D" parent="Exhausts/MoveLeft" unique_id=1913808596]
+transform = Transform3D(-1.7484556e-08, -0.4, -1.7484556e-08, 0, -1.7484556e-08, 0.4, -0.4, 1.7484556e-08, 7.642742e-16, 1.85573, -0.28000778, 1.0281526)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="MoveRight" type="Node3D" parent="Exhausts" unique_id=808127665]
+visible = false
+
+[node name="FrontRight" type="MeshInstance3D" parent="Exhausts/MoveRight" unique_id=125744220]
+transform = Transform3D(-1.3113417e-08, 0.3, 1.3113417e-08, 0, -1.3113417e-08, 0.3, 0.3, 1.3113417e-08, 5.7320567e-16, -0.535, 0.036, -2.43234)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="MoveRightBack" type="MeshInstance3D" parent="Exhausts/MoveRight" unique_id=331846088]
+transform = Transform3D(-1.7484556e-08, 0.4, 1.7484556e-08, 0, -1.7484556e-08, 0.4, 0.4, 1.7484556e-08, 7.642742e-16, -1.856, -0.28, 1.028)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="RollLeft" type="Node3D" parent="Exhausts" unique_id=1350299033]
+visible = false
+
+[node name="RollLeftUp" type="MeshInstance3D" parent="Exhausts/RollLeft" unique_id=151480000]
+transform = Transform3D(0.4, 0, 0, 0, -0.4, 3.4969112e-08, 0, -3.4969112e-08, -0.4, -1.0536271, 0.5316026, 1.028)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="RollLeftDown" type="MeshInstance3D" parent="Exhausts/RollLeft" unique_id=1581707898]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.054, -0.917, 1.028)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="RollRight" type="Node3D" parent="Exhausts" unique_id=818200217]
+visible = false
+
+[node name="RollRightDown" type="MeshInstance3D" parent="Exhausts/RollRight" unique_id=2066442462]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.054, -0.91724867, 1.028)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="RollRightUp" type="MeshInstance3D" parent="Exhausts/RollRight" unique_id=1597396198]
+transform = Transform3D(0.4, 0, 0, 0, -0.4, 3.4969112e-08, 0, -3.4969112e-08, -0.4, 1.054, 0.532, 1.028)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="TurnUp" type="Node3D" parent="Exhausts" unique_id=1492030770]
+visible = false
+
+[node name="TurnUpLeft" type="MeshInstance3D" parent="Exhausts/TurnUp" unique_id=816654735]
+transform = Transform3D(0.4, 0, 0, 0, -0.4, 3.4969112e-08, 0, -3.4969112e-08, -0.4, -1.0536271, 0.5316026, 1.028)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="TurnUpRight" type="MeshInstance3D" parent="Exhausts/TurnUp" unique_id=2790886]
+transform = Transform3D(0.4, 0, 0, 0, -0.4, 3.4969112e-08, 0, -3.4969112e-08, -0.4, 1.054, 0.532, 1.028)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="TurnUpFront" type="MeshInstance3D" parent="Exhausts/TurnUp" unique_id=1720909282]
+transform = Transform3D(-0.3, 0, 2.6226834e-08, 0, 0.3, 0, -2.6226834e-08, 0, -0.3, 0, -0.35586798, -2.633262)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="TurnDown" type="Node3D" parent="Exhausts" unique_id=1507442878]
+visible = false
+
+[node name="TurnDownLeft" type="MeshInstance3D" parent="Exhausts/TurnDown" unique_id=691022872]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, -1.054, -0.91724867, 1.028)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="TurnDownRight" type="MeshInstance3D" parent="Exhausts/TurnDown" unique_id=1635599093]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 1.054, -0.917, 1.028)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="TurnDownFront" type="MeshInstance3D" parent="Exhausts/TurnDown" unique_id=1448643395]
+transform = Transform3D(0.3, 0, 0, 0, -0.3, 2.6226834e-08, 0, -2.6226834e-08, -0.3, 0, 0.356, -2.633)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="TurnLeft" type="Node3D" parent="Exhausts" unique_id=473282785]
+visible = false
+
+[node name="TurnLeftFront" type="MeshInstance3D" parent="Exhausts/TurnLeft" unique_id=1423000960]
+transform = Transform3D(-1.3113417e-08, -0.3, -1.3113417e-08, 0, -1.3113417e-08, 0.3, -0.3, 1.3113417e-08, 5.7320567e-16, 0.53478855, 0.03624223, -2.4319654)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="MoveRightBack2" type="MeshInstance3D" parent="Exhausts/TurnLeft" unique_id=981541880]
+transform = Transform3D(-1.7484556e-08, 0.4, 1.7484556e-08, 0, -1.7484556e-08, 0.4, 0.4, 1.7484556e-08, 7.642742e-16, -1.856, -0.28, 1.028)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="TurnRight" type="Node3D" parent="Exhausts" unique_id=1207656856]
+visible = false
+
+[node name="TurnRightFront" type="MeshInstance3D" parent="Exhausts/TurnRight" unique_id=1350645537]
+transform = Transform3D(-1.3113417e-08, 0.3, 1.3113417e-08, 0, -1.3113417e-08, 0.3, 0.3, 1.3113417e-08, 5.7320567e-16, -0.535, 0.036, -2.43234)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="MoveLeftBack2" type="MeshInstance3D" parent="Exhausts/TurnRight" unique_id=1205907845]
+transform = Transform3D(-1.7484556e-08, -0.4, -1.7484556e-08, 0, -1.7484556e-08, 0.4, -0.4, 1.7484556e-08, 7.642742e-16, 1.85573, -0.28000778, 1.0281526)
+mesh = SubResource("CylinderMesh_4cq66")
+surface_material_override/0 = SubResource("StandardMaterial3D_v4325")

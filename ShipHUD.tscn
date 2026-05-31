@@ -12,11 +12,19 @@ grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1277068784]
 
-[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=1407552365]
-offset_right = 157.0
-offset_bottom = 125.0
+[node name="Map" type="Panel" parent="CanvasLayer" unique_id=208163446]
+offset_right = 284.0
+offset_bottom = 211.0
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel" unique_id=240722691]
+[node name="Speed" type="Panel" parent="CanvasLayer" unique_id=1407552365]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -125.0
+offset_right = 157.0
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="CanvasLayer/Speed" unique_id=240722691]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -37,12 +45,17 @@ vertical_alignment = 1
 script = ExtResource("1_axlma")
 event_name = "speed_changed"
 
-[node name="Panel2" type="Panel" parent="CanvasLayer" unique_id=392446858]
-offset_left = 170.0
-offset_right = 327.0
-offset_bottom = 125.0
+[node name="Accel" type="Panel" parent="CanvasLayer" unique_id=392446858]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 209.0
+offset_top = -129.0
+offset_right = 366.0
+offset_bottom = -4.0
+grow_vertical = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/Panel2" unique_id=54945296]
+[node name="Label" type="Label" parent="CanvasLayer/Accel" unique_id=54945296]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
