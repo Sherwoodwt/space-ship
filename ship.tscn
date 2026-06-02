@@ -12,6 +12,8 @@ height = 1.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v4325"]
 albedo_color = Color(0.16078432, 1, 1, 1)
+backlight_enabled = true
+backlight = Color(0.24324816, 0.46556038, 1, 1)
 
 [node name="Ship" type="CharacterBody3D" unique_id=944005227]
 script = ExtResource("1_l3rv8")
@@ -152,3 +154,15 @@ surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
 transform = Transform3D(-1.7484556e-08, -0.4, -1.7484556e-08, 0, -1.7484556e-08, 0.4, -0.4, 1.7484556e-08, 7.642742e-16, 1.85573, -0.28000778, 1.0281526)
 mesh = SubResource("CylinderMesh_4cq66")
 surface_material_override/0 = SubResource("StandardMaterial3D_v4325")
+
+[node name="Lights" type="Node3D" parent="." unique_id=1237554676]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.28205633, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights" unique_id=595370164]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.020838201, -2.3841858e-07, -2.7157388)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights" unique_id=784581601]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4169295, -1.1920929e-07, 0.91242075)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=1819287783]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.417, 0, 0.912)

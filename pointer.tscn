@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dtsu1uusa6j0t"]
+
+[ext_resource type="Script" uid="uid://b06sgtmncm3e4" path="res://pointer.gd" id="1_lu6pp"]
+[ext_resource type="Script" uid="uid://d0hhmjxpk2lo" path="res://pointer_camera.gd" id="2_p82c6"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lu6pp"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_amcjp"]
+material = SubResource("StandardMaterial3D_lu6pp")
+top_radius = 0.0
+
+[node name="Pointer" type="Node3D" unique_id=1445720581]
+
+[node name="Pivot" type="Node3D" parent="." unique_id=13345237]
+script = ExtResource("1_lu6pp")
+
+[node name="PointerMesh" type="MeshInstance3D" parent="Pivot" unique_id=537753685]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+layers = 2
+mesh = SubResource("CylinderMesh_amcjp")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=304978344]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, 0)
+layers = 2
+
+[node name="Pivort" type="Node3D" parent="." unique_id=1583591772]
+
+[node name="Camera3D" type="Camera3D" parent="Pivort" unique_id=914992321]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.337319)
+cull_mask = 1047554
+script = ExtResource("2_p82c6")

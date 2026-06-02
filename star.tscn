@@ -4,9 +4,17 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_1b021"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46ao5"]
+transparency = 1
+cull_mode = 2
+shading_mode = 0
+disable_receive_shadows = true
+
 [sub_resource type="SphereMesh" id="SphereMesh_1b021"]
+material = SubResource("StandardMaterial3D_46ao5")
 
 [node name="Star" type="RigidBody3D" unique_id=932366820]
+gravity_scale = 0.0
 script = ExtResource("1_46ao5")
 young_color = Color(0.9137255, 0.11372549, 0, 1)
 old_color = Color(0.9529412, 1, 0.78039217, 1)
@@ -15,4 +23,7 @@ old_color = Color(0.9529412, 1, 0.78039217, 1)
 shape = SubResource("SphereShape3D_1b021")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1595931615]
+cast_shadow = 0
 mesh = SubResource("SphereMesh_1b021")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=518651475]

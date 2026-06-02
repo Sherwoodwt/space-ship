@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://btw1hts50wyb3"]
+
+[ext_resource type="Script" uid="uid://dsqdswua8wfij" path="res://sectors.gd" id="1_sielp"]
+
+[node name="Sectors" type="Node3D" unique_id=1610834835]
+script = ExtResource("1_sielp")
+sector_size = 5000
+star_max = 4

@@ -1,16 +1,14 @@
 [gd_scene format=3 uid="uid://docm7prmbxp70"]
 
+[ext_resource type="Script" uid="uid://cq1hf52rgilkn" path="res://sector.gd" id="1_sb48q"]
 [ext_resource type="PackedScene" uid="uid://dkf554pyhjj20" path="res://ship.tscn" id="1_wbfu4"]
-[ext_resource type="Script" uid="uid://d3rpth4llng4x" path="res://game.gd" id="1_xkndl"]
 [ext_resource type="Script" uid="uid://dr4uqhbhh7r42" path="res://camera.gd" id="3_sb48q"]
 [ext_resource type="PackedScene" uid="uid://taswcl1cagla" path="res://ShipHUD.tscn" id="3_u44n3"]
 
 [node name="Game" type="Node3D" unique_id=728801299]
-script = ExtResource("1_xkndl")
-min_size = 500
-max_size = 4000
-size = 50000.0
-num_planets = 50
+
+[node name="Section" type="Node3D" parent="." unique_id=1744669408]
+script = ExtResource("1_sb48q")
 
 [node name="Ship" parent="." unique_id=944005227 instance=ExtResource("1_wbfu4")]
 
@@ -18,7 +16,8 @@ num_planets = 50
 
 [node name="Camera3D2" type="Camera3D" parent="Ship/Node3D" unique_id=624852853]
 transform = Transform3D(1, 0, 0, 0, 0.9366722, 0.3502074, 0, -0.3502074, 0.9366722, 0, 5.225, 10.767)
-far = 50000.0
+cull_mask = 1048573
+far = 500000.0
 script = ExtResource("3_sb48q")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=381357965]

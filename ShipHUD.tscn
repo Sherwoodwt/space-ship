@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://taswcl1cagla"]
 
-[ext_resource type="Script" uid="uid://doimso6od6f8d" path="res://speedometer.gd" id="1_axlma"]
+[ext_resource type="LabelSettings" uid="uid://c17f208nrrssd" path="res://labels.tres" id="1_i3dh4"]
+[ext_resource type="PackedScene" uid="uid://dtsu1uusa6j0t" path="res://pointer.tscn" id="1_qgj2p"]
+[ext_resource type="Script" uid="uid://yotnlhoqipcc" path="res://nearest_sun.gd" id="2_ostj3"]
+[ext_resource type="Script" uid="uid://cqnu3wuv1o6p2" path="res://display_vector.gd" id="3_2c0sx"]
 
 [node name="ShipHud" type="Control" unique_id=95916708]
 layout_mode = 3
@@ -12,66 +15,160 @@ grow_vertical = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1277068784]
 
-[node name="Map" type="Panel" parent="CanvasLayer" unique_id=208163446]
+[node name="Pointer" type="Panel" parent="CanvasLayer" unique_id=208163446]
 offset_right = 284.0
 offset_bottom = 211.0
 
-[node name="Speed" type="Panel" parent="CanvasLayer" unique_id=1407552365]
-anchors_preset = 2
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer/Pointer" unique_id=258984295]
+layout_mode = 0
+offset_right = 285.0
+offset_bottom = 215.0
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/Pointer/SubViewportContainer" unique_id=733386666]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(285, 215)
+render_target_update_mode = 4
+
+[node name="Pointer" parent="CanvasLayer/Pointer/SubViewportContainer/SubViewport" unique_id=1445720581 instance=ExtResource("1_qgj2p")]
+
+[node name="Label" type="Label" parent="CanvasLayer/Pointer" unique_id=1048893774]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("3_2c0sx")
+event = "pointer_direction"
+
+[node name="NearestSun" type="Panel" parent="CanvasLayer" unique_id=392446858]
+anchors_preset = 3
+anchor_left = 1.0
 anchor_top = 1.0
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -125.0
-offset_right = 157.0
+offset_left = -394.0
+offset_top = -106.0
+grow_horizontal = 0
 grow_vertical = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/Speed" unique_id=240722691]
+[node name="Label" type="Label" parent="CanvasLayer/NearestSun" unique_id=54945296]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
+offset_left = 13.0
+offset_top = -44.0
+offset_right = 53.0
+offset_bottom = 43.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 64
-text = "123"
-horizontal_alignment = 1
+text = "Nearest: "
+label_settings = ExtResource("1_i3dh4")
 vertical_alignment = 1
-script = ExtResource("1_axlma")
-event_name = "speed_changed"
 
-[node name="Accel" type="Panel" parent="CanvasLayer" unique_id=392446858]
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 209.0
-offset_top = -129.0
-offset_right = 366.0
-offset_bottom = -4.0
-grow_vertical = 0
-
-[node name="Label" type="Label" parent="CanvasLayer/Accel" unique_id=54945296]
+[node name="Nearest" type="Label" parent="CanvasLayer/NearestSun" unique_id=1622299286]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
+anchors_preset = 4
 anchor_top = 0.5
-anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
+offset_left = 94.0
+offset_top = -43.0
+offset_right = 164.0
+offset_bottom = 44.0
 grow_vertical = 2
 theme_override_colors/font_color = Color(1, 1, 0, 1)
 theme_override_font_sizes/font_size = 64
-text = "123"
+label_settings = ExtResource("1_i3dh4")
+vertical_alignment = 1
+script = ExtResource("2_ostj3")
+
+[node name="Button" type="Button" parent="CanvasLayer/NearestSun" unique_id=645065834]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -102.0
+offset_top = -26.0
+offset_right = -32.0
+offset_bottom = 28.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Find
+Nearest"
+
+[node name="ShipStuff" type="Panel" parent="CanvasLayer" unique_id=410371162]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -280.0
+offset_bottom = 307.0
+grow_horizontal = 0
+
+[node name="Position" type="Label" parent="CanvasLayer/ShipStuff" unique_id=411213121]
+layout_mode = 0
+offset_right = 54.0
+offset_bottom = 23.0
+text = "Position: "
+label_settings = ExtResource("1_i3dh4")
+
+[node name="Position2" type="Label" parent="CanvasLayer/ShipStuff" unique_id=43034947]
+layout_mode = 0
+offset_left = 100.0
+offset_right = 154.0
+offset_bottom = 23.0
+text = "asd"
+label_settings = ExtResource("1_i3dh4")
+script = ExtResource("3_2c0sx")
+event = "position_changed"
+
+[node name="Direction" type="Label" parent="CanvasLayer/ShipStuff" unique_id=342540743]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 90.0
+offset_right = 53.0
+offset_bottom = 113.0
+text = "Direction: "
+label_settings = ExtResource("1_i3dh4")
+
+[node name="Direction2" type="Label" parent="CanvasLayer/ShipStuff" unique_id=632688849]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 87.0
+offset_right = 150.0
+offset_bottom = 110.0
+text = "asd"
+label_settings = ExtResource("1_i3dh4")
+script = ExtResource("3_2c0sx")
+event = "direction_changed"
+
+[node name="Label" type="Label" parent="CanvasLayer/ShipStuff" unique_id=520607546]
+layout_mode = 0
+offset_top = 180.0
+offset_right = 70.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "Velocity: "
+label_settings = ExtResource("1_i3dh4")
 horizontal_alignment = 1
 vertical_alignment = 1
-script = ExtResource("1_axlma")
-event_name = "accel_changed"
+
+[node name="Velocity" type="Label" parent="CanvasLayer/ShipStuff" unique_id=182764193]
+layout_mode = 0
+offset_left = 81.0
+offset_top = 180.0
+offset_right = 151.0
+offset_bottom = 203.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_font_sizes/font_size = 64
+text = "asdf"
+label_settings = ExtResource("1_i3dh4")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("3_2c0sx")
+event = "velocity_changed"
+
+[connection signal="pressed" from="CanvasLayer/NearestSun/Button" to="CanvasLayer/NearestSun/Nearest" method="_find_nearest"]

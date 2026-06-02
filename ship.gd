@@ -6,6 +6,7 @@ const ACCEL_INC = .5
 const DECELERATION = .1
 const MAX_ROTATION = .03
 const ROTATION_ACCEL = .001
+const BOOST = 4.0
 
 var _acceleration: Vector3
 var _rotation: Vector3
@@ -51,9 +52,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		$Exhausts/Forward.visible = false
 	_flip_exhausts(-pulse.x, $Exhausts/MoveLeft, $Exhausts/MoveRight)
-	velocity = velocity.move_toward(directional_pulse * MAX_SPEED, _acceleration.length() if directional_pulse.length() else DECELERATION)
-	Events.accel_changed.emit(_acceleration.length())
-	Events.speed_changed.emit(velocity.length())
+	var boost = Input.is_action_pressed("boost")
+	var target = directional_pulse * MAX_SPEED
+	if boost:
+		target = target * BOOST
+	velocity = velocity.move_toward(target, _acceleration.length() if directional_pulse.length() else DECELERATION)
+	Events.accel_changed.emit(_acceleration)
+	Events.velocity_changed.emit(velocity)
 	
 	if (_rotation.x):
 		rotate(basis.x, _rotation.x)
@@ -62,6 +67,8 @@ func _physics_process(delta: float) -> void:
 	if (_rotation.z):
 		rotate(basis.z, _rotation.z)
 	move_and_slide()
+	Events.position_changed.emit(position)
+	Events.direction_changed.emit(-basis.z)
 
 func _flip_exhausts(value: float, left: Node3D, right: Node3D):
 	if value > 0:
