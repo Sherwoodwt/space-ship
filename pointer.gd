@@ -10,6 +10,8 @@ func _ready() -> void:
 	Events.position_changed.connect(set_origin)
 
 func _process(delta: float) -> void:
+	if !target:
+		return
 	look_at((target - origin).normalized(), basis.y)
 	Events.pointer_direction.emit(-basis.z)
 

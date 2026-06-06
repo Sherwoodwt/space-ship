@@ -1,26 +1,37 @@
 [gd_scene format=3 uid="uid://docm7prmbxp70"]
 
+[ext_resource type="Script" uid="uid://dj2lovq6786pk" path="res://game.gd" id="1_r0x5m"]
 [ext_resource type="Script" uid="uid://cq1hf52rgilkn" path="res://sector.gd" id="1_sb48q"]
 [ext_resource type="PackedScene" uid="uid://dkf554pyhjj20" path="res://ship.tscn" id="1_wbfu4"]
 [ext_resource type="Script" uid="uid://dr4uqhbhh7r42" path="res://camera.gd" id="3_sb48q"]
+[ext_resource type="Script" uid="uid://dlbs8px7fy1gg" path="res://cameras.gd" id="3_t88pq"]
 [ext_resource type="PackedScene" uid="uid://taswcl1cagla" path="res://ShipHUD.tscn" id="3_u44n3"]
+[ext_resource type="PackedScene" uid="uid://csyxewyre8t5o" path="res://crosshair.tscn" id="6_3mrqo"]
 
 [node name="Game" type="Node3D" unique_id=728801299]
+script = ExtResource("1_r0x5m")
 
 [node name="Section" type="Node3D" parent="." unique_id=1744669408]
 script = ExtResource("1_sb48q")
+size = 100000.0
 
 [node name="Ship" parent="." unique_id=944005227 instance=ExtResource("1_wbfu4")]
 
-[node name="Node3D" type="Node3D" parent="Ship" unique_id=412299355]
+[node name="Cameras" type="Node3D" parent="Ship" unique_id=412299355]
+script = ExtResource("3_t88pq")
+is_first_person = true
 
-[node name="Camera3D2" type="Camera3D" parent="Ship/Node3D" unique_id=624852853]
+[node name="3rdPerson" type="Camera3D" parent="Ship/Cameras" unique_id=624852853 groups=["pilot_camera"]]
 transform = Transform3D(1, 0, 0, 0, 0.9366722, 0.3502074, 0, -0.3502074, 0.9366722, 0, 5.225, 10.767)
-cull_mask = 1048573
-far = 500000.0
+cull_mask = 1048063
+far = 200000.0
 script = ExtResource("3_sb48q")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=381357965]
-transform = Transform3D(1, 0, 0, 0, -0.12742819, 0.9918478, 0, -0.9918478, -0.12742819, 0, 1.002068, 0)
+[node name="1stPerson" type="Camera3D" parent="Ship/Cameras" unique_id=1156778610 groups=["pilot_camera"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.9840207)
+cull_mask = 1048063
+far = 200000.0
+
+[node name="CanvasLayer" parent="Ship/Cameras" unique_id=1926316699 instance=ExtResource("6_3mrqo")]
 
 [node name="ShipHud" parent="." unique_id=95916708 instance=ExtResource("3_u44n3")]

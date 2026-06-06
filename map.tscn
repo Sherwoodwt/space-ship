@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bqyjfbo58od17"]
+
+[ext_resource type="Shader" uid="uid://xb2clwqe5tj2" path="res://sector.gdshader" id="1_c7s6e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wijl4"]
+render_priority = 0
+shader = ExtResource("1_c7s6e")
+
+[sub_resource type="BoxMesh" id="BoxMesh_e0an3"]
+material = SubResource("ShaderMaterial_wijl4")
+
+[node name="Map" type="Node3D" unique_id=912400981]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1931729624]
+mesh = SubResource("BoxMesh_e0an3")
