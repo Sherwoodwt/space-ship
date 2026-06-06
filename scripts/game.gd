@@ -5,7 +5,7 @@ extends Node3D
 @export var size: float = 10000
 @export var num_planets: int
 
-const star_scene = preload("res://star.tscn")
+const star_scene = preload("res://scenes/star.tscn")
 
 func _ready() -> void:
 	for i in range(0, num_planets):

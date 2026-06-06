@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dtsu1uusa6j0t"]
 
-[ext_resource type="Script" uid="uid://b06sgtmncm3e4" path="res://pointer.gd" id="1_lu6pp"]
-[ext_resource type="Script" uid="uid://d0hhmjxpk2lo" path="res://pointer_camera.gd" id="2_p82c6"]
+[ext_resource type="Script" uid="uid://b06sgtmncm3e4" path="res://scripts/pointer.gd" id="1_lu6pp"]
+[ext_resource type="Script" uid="uid://d0hhmjxpk2lo" path="res://scripts/pointer_camera.gd" id="2_p82c6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lu6pp"]
 albedo_color = Color(1, 0, 0, 1)

@@ -1,7 +1,7 @@
 class_name Sector
 extends Node3D
 
-@onready var star_prefab = preload("res://star.tscn")
+@onready var star_prefab = preload("res://scenes/star.tscn")
 
 @export var num_stars: int = 8
 @export var size: float = 10000

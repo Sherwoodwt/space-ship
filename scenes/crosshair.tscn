@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://csyxewyre8t5o"]
 
-[ext_resource type="Script" uid="uid://cnrc8ajh2cma2" path="res://toggle.gd" id="1_ly6fr"]
+[ext_resource type="Script" uid="uid://cnrc8ajh2cma2" path="res://scripts/toggle.gd" id="1_ly6fr"]
 [ext_resource type="Texture2D" uid="uid://cewh2qpfl2ppt" path="res://sprites/crosshair.png" id="1_rtxwy"]
 
 [node name="CanvasLayer" type="CanvasLayer" unique_id=1926316699]

@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dkrwuai67ycu5"]
 
-[ext_resource type="Script" uid="uid://dabd6yyey44a8" path="res://planet.gd" id="1_1odxm"]
+[ext_resource type="Script" uid="uid://dabd6yyey44a8" path="res://scripts/planet.gd" id="1_1odxm"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_xkndl"]
 

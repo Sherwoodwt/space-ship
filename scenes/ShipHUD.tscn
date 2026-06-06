@@ -1,11 +1,11 @@
 [gd_scene format=3 uid="uid://taswcl1cagla"]
 
 [ext_resource type="LabelSettings" uid="uid://c17f208nrrssd" path="res://labels.tres" id="1_i3dh4"]
-[ext_resource type="PackedScene" uid="uid://csyxewyre8t5o" path="res://crosshair.tscn" id="1_lr5s1"]
-[ext_resource type="Script" uid="uid://5n1r86glxo4c" path="res://secondary_view.gd" id="1_pj7ic"]
-[ext_resource type="PackedScene" uid="uid://dtsu1uusa6j0t" path="res://pointer.tscn" id="1_qgj2p"]
-[ext_resource type="Script" uid="uid://yotnlhoqipcc" path="res://nearest_sun.gd" id="2_ostj3"]
-[ext_resource type="Script" uid="uid://cqnu3wuv1o6p2" path="res://display_vector.gd" id="3_2c0sx"]
+[ext_resource type="PackedScene" uid="uid://csyxewyre8t5o" path="res://scenes/crosshair.tscn" id="1_lr5s1"]
+[ext_resource type="Script" uid="uid://5n1r86glxo4c" path="res://scripts/secondary_view.gd" id="1_pj7ic"]
+[ext_resource type="PackedScene" uid="uid://dtsu1uusa6j0t" path="res://scenes/pointer.tscn" id="1_qgj2p"]
+[ext_resource type="Script" uid="uid://yotnlhoqipcc" path="res://scripts/nearest_sun.gd" id="2_ostj3"]
+[ext_resource type="Script" uid="uid://cqnu3wuv1o6p2" path="res://scripts/display_vector.gd" id="3_2c0sx"]
 [ext_resource type="Theme" uid="uid://b8q0unrig5ml1" path="res://panels.tres" id="4_qgj2p"]
 
 [node name="ShipHud" type="Control" unique_id=95916708]
