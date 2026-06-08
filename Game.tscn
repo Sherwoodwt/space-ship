@@ -7,9 +7,27 @@
 [ext_resource type="Script" uid="uid://dlbs8px7fy1gg" path="res://scripts/cameras.gd" id="3_t88pq"]
 [ext_resource type="PackedScene" uid="uid://taswcl1cagla" path="res://scenes/ShipHUD.tscn" id="3_u44n3"]
 [ext_resource type="PackedScene" uid="uid://csyxewyre8t5o" path="res://scenes/crosshair.tscn" id="6_3mrqo"]
+[ext_resource type="PackedScene" uid="uid://w7dt4rqvas55" path="res://scenes/field.tscn" id="7_2vekm"]
+[ext_resource type="Script" uid="uid://t5hvltg23k00" path="res://scripts/enemy_ship.gd" id="7_joorw"]
+[ext_resource type="Script" uid="uid://bsf1mqnqoc0kw" path="res://scripts/field.gd" id="9_yx171"]
+
+[sub_resource type="Resource" id="Resource_yx171"]
+script = ExtResource("9_yx171")
+amplitude = 10.0
+period = 0.2
+metadata/_custom_type_script = "uid://bsf1mqnqoc0kw"
+
+[sub_resource type="Resource" id="Resource_yhmtn"]
+script = ExtResource("9_yx171")
+amplitude = 20.0
+period = 0.1
+phase = 25.0
+metadata/_custom_type_script = "uid://bsf1mqnqoc0kw"
 
 [node name="Game" type="Node3D" unique_id=728801299]
 script = ExtResource("1_r0x5m")
+
+[node name="ShipHud" parent="." unique_id=95916708 instance=ExtResource("3_u44n3")]
 
 [node name="Section" type="Node3D" parent="." unique_id=1744669408]
 script = ExtResource("1_sb48q")
@@ -34,4 +52,9 @@ far = 200000.0
 
 [node name="CanvasLayer" parent="Ship/Cameras" unique_id=1926316699 instance=ExtResource("6_3mrqo")]
 
-[node name="ShipHud" parent="." unique_id=95916708 instance=ExtResource("3_u44n3")]
+[node name="Shield" parent="Ship" unique_id=1974101728 groups=["player_shield"] instance=ExtResource("7_2vekm")]
+fields = Array[ExtResource("9_yx171")]([SubResource("Resource_yx171"), SubResource("Resource_yhmtn")])
+
+[node name="Enemy" parent="." unique_id=714873811 instance=ExtResource("1_wbfu4")]
+transform = Transform3D(-0.9301999, 0, 0.36705324, 0, 1, 0, -0.36705324, 0, -0.9301999, -4.324013, 0, -15.81045)
+script = ExtResource("7_joorw")

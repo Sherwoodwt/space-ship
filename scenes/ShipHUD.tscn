@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://yotnlhoqipcc" path="res://scripts/nearest_sun.gd" id="2_ostj3"]
 [ext_resource type="Script" uid="uid://cqnu3wuv1o6p2" path="res://scripts/display_vector.gd" id="3_2c0sx"]
 [ext_resource type="Theme" uid="uid://b8q0unrig5ml1" path="res://panels.tres" id="4_qgj2p"]
+[ext_resource type="PackedScene" uid="uid://b7sqan6pdems5" path="res://scenes/wave_graph.tscn" id="8_nwexq"]
 
 [node name="ShipHud" type="Control" unique_id=95916708]
 layout_mode = 3
@@ -198,5 +199,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("3_2c0sx")
 event = "velocity_changed"
+
+[node name="WaveGraph" parent="CanvasLayer" unique_id=398217770 instance=ExtResource("8_nwexq")]
 
 [connection signal="pressed" from="CanvasLayer/NearestSun/Button" to="CanvasLayer/NearestSun/Nearest" method="_find_nearest"]

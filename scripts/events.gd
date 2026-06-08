@@ -9,3 +9,5 @@ signal find_nearest_star(position: Vector3)
 signal to_target(target: Vector3)
 signal pointer_direction(dir: Vector3)
 signal camera_changed()
+
+signal field_changed(field: Field)

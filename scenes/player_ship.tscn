@@ -1,7 +1,7 @@
-[gd_scene format=3 uid="uid://dkf554pyhjj20"]
+[gd_scene format=3 uid="uid://dsouqx5452ajt"]
 
-[ext_resource type="Script" uid="uid://cwqj7gqsow25i" path="res://scripts/player_ship.gd" id="1_2gnfn"]
-[ext_resource type="ArrayMesh" uid="uid://ugpkv4ioubry" path="res://models/Package/InterstellarRunner.obj" id="2_4cq66"]
+[ext_resource type="Script" uid="uid://cwqj7gqsow25i" path="res://scripts/player_ship.gd" id="1_ye4q7"]
+[ext_resource type="ArrayMesh" uid="uid://ugpkv4ioubry" path="res://models/Package/InterstellarRunner.obj" id="2_7t0u0"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_4cq66"]
 
@@ -16,7 +16,7 @@ backlight_enabled = true
 backlight = Color(0.24324816, 0.46556038, 1, 1)
 
 [node name="Ship" type="CharacterBody3D" unique_id=944005227]
-script = ExtResource("1_2gnfn")
+script = ExtResource("1_ye4q7")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=548423482]
 transform = Transform3D(2.295, 0, 0, 0, -1.0031764e-07, 2.295, 0, -2.295, -1.0031764e-07, 0, 0, 0)
@@ -24,7 +24,7 @@ shape = SubResource("CapsuleShape3D_4cq66")
 
 [node name="Model" type="MeshInstance3D" parent="." unique_id=1125792518]
 transform = Transform3D(-0.99999994, 0, -8.742277e-08, 0, 1, 0, 8.742277e-08, 0, -0.99999994, 1.71, -0.8, -2.9908862)
-mesh = ExtResource("2_4cq66")
+mesh = ExtResource("2_7t0u0")
 
 [node name="Exhausts" type="Node3D" parent="." unique_id=783207977]
 
@@ -166,3 +166,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4169295, -1.1920929e-07, 0.
 
 [node name="OmniLight3D3" type="OmniLight3D" parent="Lights" unique_id=1819287783]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.417, 0, 0.912)
+
+[node name="Node3D" type="Node3D" parent="." unique_id=1684586913]
